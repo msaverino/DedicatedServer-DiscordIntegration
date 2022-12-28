@@ -27,7 +27,8 @@ namespace DiscordBotAutomation.DigitalCombatSimulator
                     Console.WriteLine("Checking online players.");
                     int listeningPort = GameConfiguration.gameData.QueryReceivePort;
                     int sendingPort = GameConfiguration.gameData.QuerySendPort;
-                    string serverIp = GameConfiguration.gameData.ServerIP;
+                    string serverIp = "127.0.0.1"; // Localhost as we don't want to over-write the IP from the database.
+                    // Went this route because this runs on the same server DCS is running on + if we want to add this to a website we can have the public facing IP.
 
                     UdpClient toClient = new UdpClient();
                     UdpClient toServer = new UdpClient();
