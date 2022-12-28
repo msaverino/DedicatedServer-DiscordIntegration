@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gaming-Discord-Bot-Automation", "Gaming-Discord-Bot-Automation\Gaming-Discord-Bot-Automation.csproj", "{6AB8BB35-5467-44A9-ADFA-06ED3CFC4121}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gaming-Discord-Bot-Automation", "Gaming-Discord-Bot-Automation\Gaming-Discord-Bot-Automation.csproj", "{6AB8BB35-5467-44A9-ADFA-06ED3CFC4121}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminPanel", "AdminPanel\AdminPanel.csproj", "{D7EF5DFC-B691-42C7-932B-217AE2002C8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalCombatSimulator", "DigitalCombatSimulator\DigitalCombatSimulator.csproj", "{AC78E868-D172-4EB7-BDCE-41F3D6CD814F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{6AB8BB35-5467-44A9-ADFA-06ED3CFC4121}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AB8BB35-5467-44A9-ADFA-06ED3CFC4121}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AB8BB35-5467-44A9-ADFA-06ED3CFC4121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7EF5DFC-B691-42C7-932B-217AE2002C8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7EF5DFC-B691-42C7-932B-217AE2002C8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7EF5DFC-B691-42C7-932B-217AE2002C8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7EF5DFC-B691-42C7-932B-217AE2002C8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC78E868-D172-4EB7-BDCE-41F3D6CD814F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC78E868-D172-4EB7-BDCE-41F3D6CD814F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC78E868-D172-4EB7-BDCE-41F3D6CD814F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC78E868-D172-4EB7-BDCE-41F3D6CD814F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
