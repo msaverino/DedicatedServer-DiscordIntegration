@@ -45,7 +45,7 @@ namespace AdminPanel
                     query = "SELECT " +
                         "g.game_key, g.game_name, " +
                         "n.server_ip, n.server_port, n.query_port_send, n.query_port_receive, n.query_port_two_way, " +
-                        "u.enable_updater, u.updater_path, u.updater_arguments, u.steam_game, u.server_version, u.latest_version, u.update_lock, u.force_update, u.dedicated_acknowledgement, dedicated_acknowledgement_date, dedicated_completed_update, " +
+                        "u.enable_updater, u.updater_path, u.updater_arguments, u.root_path, u.application_path, u.steam_game, u.server_version, u.latest_version, u.update_lock, u.force_update, u.dedicated_acknowledgement, dedicated_acknowledgement_date, dedicated_completed_update, " +
                         "dr.role, " +
                         "dn.admin_channel, dn.notify_admins, dn.user_notification_channel, dn.notify_users, dn.player_count_channel, dn.update_player_count, " +
                         "pc.online_players, pc.last_updated, pc.most_online, pc.most_online_date " +
