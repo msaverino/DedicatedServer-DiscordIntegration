@@ -11,5 +11,5 @@ CREATE TABLE `player_count` (
 )
 COLLATE='latin1_swedish_ci'
 ENGINE=InnoDB
-AUTO_INCREMENT=9
+AUTO_INCREMENT=1
 ;

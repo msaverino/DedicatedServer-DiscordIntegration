@@ -1,14 +1,6 @@
-﻿using DigitalCombatSimulator.DataModel;
-using DiscordBotAutomation.DigitalCombatSimulator;
-using HtmlAgilityPack;
+﻿using HtmlAgilityPack;
 using MySqlConnector;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DiscordBotAutomation.DigitalCombatSimulator
 {
@@ -21,7 +13,7 @@ namespace DiscordBotAutomation.DigitalCombatSimulator
                 int elapsedTime = 0;
                 GetDedicatedServerVersion();
                 GetLatestVersion();
-                if (GameConfiguration.gameData.ServerVersion != GameConfiguration.gameData.LatestVersion)
+                if (GameConfiguration.gameData.ServerVersion != GameConfiguration.gameData.LatestVersion && GameConfiguration.gameData.EnableUpdater)
                     PerformUpdate();
                 while (elapsedTime <= 2160) // 6 hours
                 {
@@ -47,15 +39,18 @@ namespace DiscordBotAutomation.DigitalCombatSimulator
                             }
                             connection.Close();
                         }
-                    } catch
-                    {
-                        
                     }
+                    catch
+                    {
+
+                    }
+
+                    //Console.WriteLine("Force update is set to: " + GameConfiguration.gameData.ForceUpdate);
 
                     if (GameConfiguration.gameData.ForceUpdate)
                         break;
 
-                    Task.Delay(10000); // Wait 10 second
+                    Task.Delay(10000).Wait(); // Wait 10 second
                     elapsedTime += 10;
                 }
             }
@@ -78,6 +73,10 @@ namespace DiscordBotAutomation.DigitalCombatSimulator
                             // We need to check if the version matches our SQL database.
                             if (GameConfiguration.gameData.ServerVersion != serverVersion)
                             {
+                                //Console.WriteLine("-----------------------");
+                                //Console.WriteLine("Server Version: " + GameConfiguration.gameData.ServerVersion);
+                                //Console.WriteLine("-----------------------");
+
                                 //Console.WriteLine("The server version has changed.");
                                 GameConfiguration.gameData.ServerVersion = serverVersion;
                                 // We need to update the SQL database.
@@ -96,13 +95,14 @@ namespace DiscordBotAutomation.DigitalCombatSimulator
 
                                         connection.Close();
                                     }
-                                } catch (Exception ex)
+                                }
+                                catch (Exception ex)
                                 {
                                     Console.WriteLine(ex);
                                 }
-                                
+
                             }
-                             //= lineArray[3];
+                            //= lineArray[3];
                             break;
                         }
                     }
@@ -156,7 +156,7 @@ namespace DiscordBotAutomation.DigitalCombatSimulator
 
                 // We would want to perform some functions on a safe thread as we're going to have to wait a while here.
 
-         
+
 
             }
 

@@ -12,5 +12,5 @@ CREATE TABLE `networking` (
 )
 COLLATE='latin1_swedish_ci'
 ENGINE=InnoDB
-AUTO_INCREMENT=13
+AUTO_INCREMENT=1
 ;

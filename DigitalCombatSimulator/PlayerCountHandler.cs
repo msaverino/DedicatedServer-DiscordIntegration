@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Sockets;
+﻿using MySqlConnector;
 using System.Net;
+using System.Net.Sockets;
 using System.Text;
-using System.Threading.Tasks;
-using DiscordBotAutomation.DigitalCombatSimulator;
-using DigitalCombatSimulator.DataModel;
-using System.Data.Common;
-using MySqlConnector;
 
 namespace DiscordBotAutomation.DigitalCombatSimulator
 {
@@ -24,7 +17,7 @@ namespace DiscordBotAutomation.DigitalCombatSimulator
             {
                 if (!GameConfiguration.gameData.UpdateInProgress)
                 {
-                    Console.WriteLine("Checking online players.");
+                    //Console.WriteLine("Checking online players.");
                     int listeningPort = GameConfiguration.gameData.QueryReceivePort;
                     int sendingPort = GameConfiguration.gameData.QuerySendPort;
                     string serverIp = "127.0.0.1"; // Localhost as we don't want to over-write the IP from the database.
@@ -57,6 +50,10 @@ namespace DiscordBotAutomation.DigitalCombatSimulator
 
                         if (Int32.TryParse(response, out int playerCount))
                         {
+                            if (playerCount == 0)
+                                continue;
+                            else
+                                playerCount = playerCount - 1; // Subtract 1 for the server itself.
                             GameConfiguration.gameData.PlayerCount = playerCount;
                             GameConfiguration.gameData.LastUpdated = DateTime.UtcNow;
                             // We need to update the database
@@ -69,7 +66,8 @@ namespace DiscordBotAutomation.DigitalCombatSimulator
                                     command.Parameters.AddWithValue("@player_count", GameConfiguration.gameData.PlayerCount);
                                     command.Parameters.AddWithValue("@game_key", GameConfiguration.gameData.Id);
                                     command.Parameters.AddWithValue("@utc_date", GameConfiguration.gameData.LastUpdated.ToString("yyyy-MM-dd HH:mm:ss"));
-                                    Console.WriteLine(GameConfiguration.gameData.LastUpdated.ToString("yyyy-MM-dd HH:mm:ss"));
+                                    Console.WriteLine(GameConfiguration.gameData.LastUpdated.ToString("yyyy-MM-dd HH:mm:ss") + " - " + GameConfiguration.gameData.PlayerCount);
+
                                     command.ExecuteNonQuery();
                                 }
                             }
@@ -88,7 +86,7 @@ namespace DiscordBotAutomation.DigitalCombatSimulator
                                         command.Parameters.AddWithValue("@player_count", GameConfiguration.gameData.PlayerCount);
                                         command.Parameters.AddWithValue("@game_key", GameConfiguration.gameData.Id);
                                         command.Parameters.AddWithValue("@utc_date", GameConfiguration.gameData.LastUpdated.ToString("yyyy-MM-dd HH:mm:ss"));
-                                        Console.WriteLine(GameConfiguration.gameData.LastUpdated.ToString("yyyy-MM-dd HH:mm:ss"));
+                                        //Console.WriteLine(GameConfiguration.gameData.LastUpdated.ToString("yyyy-MM-dd HH:mm:ss"));
                                         command.ExecuteNonQuery();
                                     }
                                 }
@@ -96,15 +94,15 @@ namespace DiscordBotAutomation.DigitalCombatSimulator
                         }
                         else
                         {
-                            Console.WriteLine("Error: " + response);
+                            Console.WriteLine(DateTime.UtcNow + ": " + response);
                         }
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine(ex.Message);
+                        Console.WriteLine(DateTime.UtcNow + ": " + ex.Message);
                     }
                     toClient.Close();
-                    Task.Delay(1000).Wait();
+                    Task.Delay(60000).Wait(); // 1 minute delay.
                 }
 
             }

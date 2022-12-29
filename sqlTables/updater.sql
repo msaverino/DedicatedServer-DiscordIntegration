@@ -20,5 +20,5 @@ CREATE TABLE `updater` (
 )
 COLLATE='latin1_swedish_ci'
 ENGINE=InnoDB
-AUTO_INCREMENT=13
+AUTO_INCREMENT=1
 ;

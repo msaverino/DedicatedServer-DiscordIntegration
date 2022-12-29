@@ -5,5 +5,5 @@ CREATE TABLE `games` (
 )
 COLLATE='latin1_swedish_ci'
 ENGINE=InnoDB
-AUTO_INCREMENT=17
+AUTO_INCREMENT=1
 ;

@@ -8,5 +8,5 @@ CREATE TABLE `discord` (
 )
 COLLATE='latin1_swedish_ci'
 ENGINE=InnoDB
-AUTO_INCREMENT=2
+AUTO_INCREMENT=1
 ;

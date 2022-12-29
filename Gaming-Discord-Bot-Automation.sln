@@ -7,9 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gaming-Discord-Bot-Automati
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminPanel", "AdminPanel\AdminPanel.csproj", "{D7EF5DFC-B691-42C7-932B-217AE2002C8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalCombatSimulator", "DigitalCombatSimulator\DigitalCombatSimulator.csproj", "{AC78E868-D172-4EB7-BDCE-41F3D6CD814F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalCombatSimulator", "DigitalCombatSimulator\DigitalCombatSimulator.csproj", "{AC78E868-D172-4EB7-BDCE-41F3D6CD814F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{A85070DA-30DE-492D-8B5A-6E9C2204DF68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testing", "Testing\Testing.csproj", "{A85070DA-30DE-492D-8B5A-6E9C2204DF68}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dayz", "Dayz\Dayz.csproj", "{8B95DC3D-5DCD-4C4E-AE95-7C250A68E054}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFPWebsite", "TFPWebsite\TFPWebsite.csproj", "{CF5C9D84-9EB8-4F2C-AF3D-230FF53053CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{A85070DA-30DE-492D-8B5A-6E9C2204DF68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A85070DA-30DE-492D-8B5A-6E9C2204DF68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A85070DA-30DE-492D-8B5A-6E9C2204DF68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B95DC3D-5DCD-4C4E-AE95-7C250A68E054}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B95DC3D-5DCD-4C4E-AE95-7C250A68E054}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B95DC3D-5DCD-4C4E-AE95-7C250A68E054}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B95DC3D-5DCD-4C4E-AE95-7C250A68E054}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF5C9D84-9EB8-4F2C-AF3D-230FF53053CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF5C9D84-9EB8-4F2C-AF3D-230FF53053CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF5C9D84-9EB8-4F2C-AF3D-230FF53053CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF5C9D84-9EB8-4F2C-AF3D-230FF53053CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

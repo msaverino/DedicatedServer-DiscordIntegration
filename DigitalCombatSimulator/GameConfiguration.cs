@@ -338,7 +338,8 @@ namespace DiscordBotAutomation.DigitalCombatSimulator
                                 gameData.MostOnline = reader.GetInt32(29);
                                 gameData.DateOfMostOnline = reader.GetDateTime(30);
                             }
-                        } else
+                        }
+                        else
                         {
                             Console.WriteLine("We couldn't find the information inside of SQL.");
                             Console.WriteLine("Please validate that everything is setup correctly.");

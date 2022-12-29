@@ -1,0 +1,47 @@
+﻿@page
+@model TFPWebsite.Pages.GameServerStatusModel
+@{
+}
+
+<table class="table table-responsive">
+    <tbody>
+        <tr>
+            <th>Game</th>
+            <th>IP:Port</th>
+            <th>Players Online</th>
+            <th>Most Players Online - Date</th>
+        </tr>
+
+        @{
+            int count = 0;
+            foreach (var game in GameDataModel.GameData)
+            {
+                count++;
+                <tr>
+                    <td>@game.GameName</td>
+                        <td>@game.ServerIP:@game.ServerPort</td>
+                        <td>
+                        @if (DateTime.UtcNow.AddMinutes(-5) > game.LastUpdated)
+                        {
+                            <text>Server Offline</text>
+                        }
+                        else
+                        {
+                            @game.PlayerCount
+                        }
+                        </td>
+                        <td>@game.MostOnline - @game.DateOfMostOnline</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<!-- Add a note that all times are in UTC, and the page is updated every 1 minute. -->
+<div>
+    <p>
+        All times are in UTC. This page is updated every 1 minute.<br>
+        UTC time is @DateTime.UtcNow <br />
+        Last Updated is @GameDataModel.SqlTableLastRead
+    </p>
+</div>
+

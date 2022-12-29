@@ -1,9 +1,4 @@
-﻿using DigitalCombatSimulator.DataModel;
-using MySqlConnector;
-using System.Collections.Generic;
-using System.Reflection.Metadata;
-
-namespace DiscordBotAutomation.DigitalCombatSimulator
+﻿namespace DiscordBotAutomation.DigitalCombatSimulator
 {
     public class Program
     {
@@ -20,14 +15,25 @@ namespace DiscordBotAutomation.DigitalCombatSimulator
             Task.Run(() => UpdateHandler.HandleUpdateChecks());
             //_ = UpdateHandler.HandleUpdateChecks();
             // Testing
-            Console.WriteLine(GameConfiguration.gameData.GameName);
-            Console.WriteLine(GameConfiguration.gameData.Id);
+            //Console.WriteLine(GameConfiguration.gameData.GameName);
+            //Console.WriteLine(GameConfiguration.gameData.Id);
 
             Task.Run(() => PlayerCountHandler.UpdatePlayerCount());
 
+            // We want to wait indefinitely until the user presses CTRL+C
+            // This is because we want to keep the bot running.
+            while (true)
+            {
+                if (Console.ReadKey().Key == ConsoleKey.C && Console.ReadKey().Modifiers == ConsoleModifiers.Control)
+                {
+                    Console.WriteLine("Exiting...");
+                    break;
+                }
+            }
+
             Console.ReadLine();
         }
-        
-        
+
+
     }
 }

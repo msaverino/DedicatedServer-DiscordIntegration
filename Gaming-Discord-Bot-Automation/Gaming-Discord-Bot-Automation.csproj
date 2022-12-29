@@ -17,6 +17,7 @@
     <PackageReference Include="Discord.Net.WebSocket" Version="3.9.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
     <PackageReference Include="MySqlConnector" Version="2.2.4" />
+    <PackageReference Include="Topshelf" Version="4.3.0" />
   </ItemGroup>
 
 </Project>

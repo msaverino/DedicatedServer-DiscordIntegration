@@ -22,7 +22,7 @@ namespace Testing
 
             bool isListeningPortValid = int.TryParse(listeningPortString, out listeningPort);
             bool isSendingPortValid = int.TryParse(sendingPortString, out sendingPort);
-            
+
             if (isListeningPortValid && isSendingPortValid)
             {
                 UdpClient toClient = new UdpClient();
@@ -32,7 +32,8 @@ namespace Testing
                 try
                 {
                     toServer.Send(sendBytes, sendBytes.Length, serverIp, sendingPort);
-                } catch (Exception ex)
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -60,7 +61,8 @@ namespace Testing
                     MessageBox.Show(ex.Message);
                 }
                 toClient.Close();
-            } else
+            }
+            else
             {
                 // We want to notify the user that one of the ports was not setup correctly.
                 MessageBox.Show("You didn't enter a correct port.");

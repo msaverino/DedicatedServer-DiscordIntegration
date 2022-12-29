@@ -13,5 +13,5 @@ CREATE TABLE `discord_notification` (
 )
 COLLATE='latin1_swedish_ci'
 ENGINE=InnoDB
-AUTO_INCREMENT=12
+AUTO_INCREMENT=1
 ;

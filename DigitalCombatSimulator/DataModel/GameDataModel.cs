@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DigitalCombatSimulator.DataModel
+﻿namespace DigitalCombatSimulator.DataModel
 {
     internal class GameDataModel
     {
@@ -28,7 +22,7 @@ namespace DigitalCombatSimulator.DataModel
         public bool DedicatedAcknowledge { get; set; }
         public DateTime DedicatedAcknowledgeDate { get; set; }
         public DateTime DedicatedCompletedUpdated { get; set; }
-        public List<string> Staff { get; set;}
+        public List<string> Staff { get; set; }
         public int PlayerCount { get; set; }
         public int MostOnline { get; set; }
         public DateTime LastUpdated { get; set; }
