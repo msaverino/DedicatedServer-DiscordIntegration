@@ -2,6 +2,7 @@
 
 # Third-Party Addons
 |Reference|Version|License Type|License|
+
 |Discord.Net|3.9.0|MIT|https://licenses.nuget.org/MIT|
 |Discord.Net.Commands|3.9.0|MIT|https://licenses.nuget.org/MIT|
 |Discord.Net.Core|3.9.0|MIT|https://licenses.nuget.org/MIT|
