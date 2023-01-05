@@ -61,6 +61,7 @@ namespace AdminPanel
                     DataTable table = new DataTable();
                     adapter.Fill(table);
                     dataGrid_sql_output.DataSource = table;
+                    //dataGrid_sql_output.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.Fill);
 
                     mysqlconnection.Close();
                     LogLabel("Connection successful!");
@@ -145,7 +146,8 @@ namespace AdminPanel
                         LogLabel($"deleted {gameName}");
                         MessageBox.Show("Delete successful!");
                     }
-                } else
+                }
+                else
                 {
                     LogLabel("User aborted deleting " + gameName);
                 }
@@ -166,6 +168,11 @@ namespace AdminPanel
         private void LogLabel(string message)
         {
             label_logger.Text = message;
+        }
+
+        private void dataGrid_sql_output_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

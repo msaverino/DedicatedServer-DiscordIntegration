@@ -221,6 +221,7 @@
             this.dataGrid_sql_output.RowTemplate.Height = 25;
             this.dataGrid_sql_output.Size = new System.Drawing.Size(1105, 369);
             this.dataGrid_sql_output.TabIndex = 0;
+            this.dataGrid_sql_output.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_sql_output_CellContentClick);
             // 
             // label_logger
             // 

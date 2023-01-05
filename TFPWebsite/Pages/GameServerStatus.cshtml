@@ -3,7 +3,44 @@
 @{
 }
 
-<table class="table table-responsive">
+<table class="table table-striped table-dark">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Game</th>
+            <th scope="col">IP:Port</th>
+            <th scope="col">Players Online</th>
+            <th scope="col">Most Players Online - Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int count = 0;
+            foreach (var game in GameDataModel.GameData)
+            {
+                count++;
+                <tr>
+                    <th scope="row">@count</th>
+                    <td>@game.GameName</td>
+                    <td>@game.ServerIP:@game.ServerPort</td>
+                    <td>
+                        @if (DateTime.UtcNow.AddMinutes(-5) > game.LastUpdated)
+                        {
+                            <text>Server Offline</text>
+                        }
+                        else
+                        {
+                            @game.PlayerCount
+                        }
+                    </td>
+                    <td>@game.MostOnline - @game.DateOfMostOnline</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@*<table class="table table-responsive">
     <tbody>
         <tr>
             <th>Game</th>
@@ -35,13 +72,11 @@
             }
         }
     </tbody>
-</table>
+</table>*@
 <!-- Add a note that all times are in UTC, and the page is updated every 1 minute. -->
 <div>
     <p>
-        All times are in UTC. This page is updated every 1 minute.<br>
-        UTC time is @DateTime.UtcNow <br />
-        Last Updated is @GameDataModel.SqlTableLastRead
+        To ensure consistency, all times on this page are displayed in Coordinated Universal Time (UTC). To ensure that you are viewing the most current information, this page is refreshed every 1 minute. The current UTC time is @DateTime.UtcNow and the data on this page was last updated at @GameDataModel.SqlTableLastRead.
     </p>
 </div>
 
